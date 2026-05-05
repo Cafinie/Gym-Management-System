@@ -1,0 +1,260 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="home.master.cs" Inherits="gym_hub.Site1" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GymHub - Fitness Management</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        /* -------------------- RESET -------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        /* -------------------- HEADER -------------------- */
+        header {
+background: linear-gradient(90deg, #34495e, #34495e);
+
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+            width: 100%;               /* Full width */
+    margin: 0;                 /* Extra margin remove */
+    padding: 18px 20px;        /* Sirf top-bottom padding, left-right kam */
+    box-sizing: border-box;
+        }
+
+        header .upper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+/*            padding: 18px 50px;*/
+             padding: 0 20px; 
+        }
+
+        /* Logo */
+        .logo_text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-left: 10px;
+        }
+
+        header .logo .fas.fa-dumbbell {
+            color: #e74c3c; /* Red icon */
+            font-size: 1.6rem;
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #e74c3c;
+            transform: translateY(-2px);
+        }
+
+        nav ul li a i {
+            color: inherit;
+        }
+
+        /* -------------------- MAIN CONTENT -------------------- */
+        main {
+            flex: 1;
+/*      padding: 20px;*/
+            background: none;
+        }
+
+        /* -------------------- FOOTER -------------------- */
+        footer {
+            background: linear-gradient(90deg, #34495e, #34495e);
+            color: #ccc;
+            padding: 40px 60px;
+            width: 100%;               /* Full width */
+    margin: 0;                 /* Extra margin remove */
+    padding: 40px 20px; 
+        }
+
+        .footer_container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 0 20px; 
+        }
+
+        footer h3 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        footer p {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #ccc;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: #e74c3c;
+        }
+
+        .Social_Links a {
+            font-size: 1.2rem;
+            margin-right: 12px;
+            display: inline-block;
+        }
+
+        .quick_links ul,
+        .Services ul,
+        .contact ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .quick_links li,
+        .Services li,
+        .contact li {
+            margin: 6px 0;
+        }
+
+        .contact i {
+            color: #e74c3c;
+            margin-right: 8px;
+        }
+
+        .copyright {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* -------------------- RESPONSIVE -------------------- */
+        @media (max-width: 768px) {
+            header .upper {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                padding: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            footer {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header Start -->
+        <header>
+            <div class="upper">
+                <div class="logo">
+                    <i class="fas fa-dumbbell"></i>
+                    <span class="logo_text">GymHub</span>
+                </div>
+
+                <nav>
+    <ul>
+        <li><a id="lnkHome" runat="server" href="homepage.aspx"><i class="fas fa-home"></i>Home</a></li>
+        <li><a id="lnkLogin" runat="server" href="Loginform.aspx"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+        <li><a id="lnkCustomer" runat="server" href="Customer_Dashboard.aspx"><i class="fas fa-users"></i>Customer</a></li>
+        <li><a id="lnkEquipment" runat="server" href="mainmenu.aspx"><i class="fas fa-dumbbell"></i>Equipment</a></li>
+        <li><a id="lnkPayment" runat="server" href="#"><i class="fas fa-credit-card"></i>Payment</a></li>
+        <li><a id="lnkLogout" runat="server" href="loginform.aspx"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+    </ul>
+</nav>
+
+            </div>
+        </header>
+        <!-- Header End -->
+
+        <!-- Main Content Placeholder -->
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </main>
+
+        <!-- Footer Start -->
+        <footer>
+            <div class="footer_container">
+                <div class="about">
+                    <h3>About Us</h3>
+                    <p>GymHub is a comprehensive fitness management solution designed to help gym owners streamline operations and enhance member experience.</p>
+                </div>
+
+                <div class="Services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#features"><i class="fas fa-chevron-right"></i> Customer Management</a></li>
+                        <li><a href="#features"><i class="fas fa-chevron-right"></i> Equipment Management</a></li>
+                        <li><a href="#features"><i class="fas fa-chevron-right"></i> Payment Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Alcoz Street no 234, Pakistan</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@gymhub.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon - Sun: 5:00 AM - 11:00 PM</a></li>
+                    </ul>
+                </div>
+
+                <div class="Social_Links_container">
+                    <h3>Follow Us</h3>
+                    <div class="Social_Links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 GymHub Fitness Management System. All rights reserved.</p>
+            </div>
+        </footer>
+        <!-- Footer End -->
+    </form>
+</body>
+</html>
